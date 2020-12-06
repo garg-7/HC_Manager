@@ -20,12 +20,12 @@ For more 'object-oriented' details head over [here](Object-Oriented_Stuff/).
 The project is built using vanilla C++. No external dependencies. You could simply run the executable according to your platform.
   
 ### Windows
-You people can run the `hc_win.exe` file.
+Simply run the `hc_win.exe` file.
   
 ### Ubuntu
 (Since it has only been tested on Ubuntu 18.04.4, being completely conservative we've mentioned Ubuntu as the title here but there is no reason you couldn't run this on any Linux distro).
   
-You can run the following on terminal.
+Run the following in a terminal prompt.
 ```bash
 bash hc_lin.out
 ```
