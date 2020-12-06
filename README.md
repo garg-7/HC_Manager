@@ -1,8 +1,7 @@
-# OOAD Course Project 2019
+# Health Center Management System
+Course project for CS212: Object Oriented Analysis & Design
 
-Health Center Management System.
-
-Contributors:
-B18CSE011
-B18CSE020
-B18CSE028
+## Actors
+* Patients (including students, staff & faculty)
+* Doctor's Office at the health center (including reception staff & doctors)
+* Pharmacy at the health center
