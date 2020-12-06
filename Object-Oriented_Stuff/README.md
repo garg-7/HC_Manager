@@ -16,4 +16,6 @@ Continuing down the Object-Oriented road, here are some details of the project -
 * **Office of Accounts** (recording medical expenses incurred against the amount each student is insured for)
 
 ### Workflow
-We could go on and on about how every user interacts with the system as they log in but that would be tedious and most people tend to skip that, so instead, just take a look at [`activity_diagram.png`](activity_diagram.png) (or [`activity_diagram.mdj`](activity_diagram.mdj)), to get an idea of how everything is related and works together.
+We could go on and on about how every user interacts with the system as they log in but that would be tedious and most people tend to skip that, so instead, just take a look at the activity diagram below (or open [`activity_diagram.mdj`](activity_diagram.mdj) in StarUML), to get an idea of how everything is related and works together.
+
+![activity diagram](activity_diagram.png "Activity Diagram")
