@@ -5,15 +5,15 @@ This is a management system for the health center at IIT-Jodhpur. It was develop
 The aim of this project was to help develop an understanding (via an exemplar implementation) of object-oriented design of systems.
   
 ## Object-Oriented Design
-Owing to the object-oriented design, first the actors of this system were recognized along with their interactions with the system. This was consolidated with the help of the following:
-* [Class Responsibility & Collaboration a.k.a. CRC cards](Object-Oriented_Stuff/OOD_info.md)
-* [Use-Case diagram](Object-Oriented_Stuff/OOD_info.md)
-* [Class diagram](Object-Oriented_Stuff/OOD_info.md)
-* [Activity diagram](Object-Oriented_Stuff/OOD_info.md)
+Owing to the object-oriented design, first the actors of this system were recognized along with their interactions with the system. This was consolidated in the form of the following:
+* [Class Responsibility & Collaboration a.k.a. CRC cards](Object-Oriented_Stuff/)
+* [Use-Case diagram](Object-Oriented_Stuff/)
+* [Class diagram](Object-Oriented_Stuff/)
+* [Activity diagram](Object-Oriented_Stuff/)
   
 Note: the above visualisations have been created with the help of a great modeling tool [StarUML](https://staruml.io/).
   
-For more 'object-oriented' details head over [here](Object-Oriented_Stuff/OOD_info.md).
+For more 'object-oriented' details head over [here](Object-Oriented_Stuff/).
   
   
 ## Requirements
@@ -27,5 +27,5 @@ You people can run the `hc_win.exe` file.
   
 You can run the following on terminal.
 ```bash
-bash hc_lin
+bash hc_lin.out
 ```
