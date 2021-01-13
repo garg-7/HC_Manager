@@ -1,13 +1,14 @@
 // Patients Header File
 #include <iostream>
-#include <cstring>
+// #include <string>
+// #include <cstring>
 #include <bits/stdc++.h>
-#include <conio.h>
-
+#include <ncurses.h>
 #include "Patient.h"
 #include "DoctorsOffice.h"
 #include "Pharmacy.h"
 #include "OfficeOfAcademics.h"
+
 
 #define AVAILABLE 1
 #define STUDENT 1
@@ -20,6 +21,7 @@ int count4=0;
 char Patient::currldap[40] ={0};
 int  Patient::loginmode = 0;
 
+
 void LOGINSTART();
 
 
@@ -28,20 +30,15 @@ void LOGINSTART();
             char ldap[40], pass[40];
             std::cout << "Enter LDAP ID: " ;
             std::cin >> ldap;
-            std::cout << "Enter Password: " ;
-            int i=0;
-            char c;
-            c=getch();
-            do
-            {
-                pass[i]=c;
-                i++;
-                printf("*");
-                c=getch();
-            } while (c!='\r');
             
-            pass[i]='\0';
-            std::cout << std::endl;
+            initscr(); // enable ncurses
+            printw("Enter Password: ");
+            noecho();  // disable character echoing
+            getnstr(pass,sizeof(pass));
+            echo(); // enable character echoing again
+            // getch(); // Wait for a keypress
+            endwin(); // disable ncurses
+            // std::cout << std::endl;
             int loginverify = OfficeOfAcademics::VerifyCredentials(ldap, pass);
             if(loginverify==SUCCESSFUL)
             {

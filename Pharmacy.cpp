@@ -2,8 +2,7 @@
 #include <cstring>
 #include <bits/stdc++.h>
 #include <cstdio>
-#include <conio.h>
-
+#include <curses.h>
 #include "Pharmacy.h"
 #include "OfficeOfAccounts.h"
 #include "OfficeOfAcademics.h"
@@ -67,22 +66,13 @@ char Pharmacy::currEmployeeID[40] = {0};
             char EmployeeID[40], pass[40];
             std::cout << "Enter Employee ID: ";
             std::cin >> EmployeeID;
-            std::cout << "Enter Password: ";
-            int i=0;
-            char c;
-            c=getch();
-            do
-            {
-                pass[i]=c;
-                i++;
-                printf("*");
-                c=getch();
-            } while (c!='\r');
-            pass[i]='\0';
-            std::cout << std::endl;
-            
-            
-            //std::cin >> pass;
+            initscr();
+            printw("Enter Password: ");
+            noecho();  // disable character echoing
+            getnstr(pass,sizeof(pass));
+            echo(); // enable character echoing again
+            // getch(); // Wait for a keypress
+            endwin(); // disable ncurses
             int loginverify = OfficeOfAcademics::VerifyCredentials(EmployeeID, pass);
             if(loginverify==SUCCESSFUL)
             {

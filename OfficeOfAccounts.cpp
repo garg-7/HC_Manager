@@ -2,8 +2,7 @@
 #include <iostream>
 #include <cstring>
 #include <bits/stdc++.h>
-#include <conio.h>
-
+#include <curses.h>
 #include "OfficeOfAcademics.h"
 #include "OfficeOfAccounts.h"
 
@@ -22,20 +21,15 @@ void LOGINSTART();
             char EmployeeID[40], pass[40];
             std::cout << "Enter EmployeeID: " ;
             std::cin >> EmployeeID;
-            std::cout << "Enter Password: " ;
-            //std::cin >> pass;
-            int i=0;
-            char c;
-            c=getch();
-            do
-            {
-                pass[i]=c;
-                i++;
-                printf("*");
-                c=getch();
-            } while (c!='\r');
-            pass[i]='\0';
-            std::cout << std::endl;
+            
+            initscr(); // enable ncurses
+            printw("Enter Password: ");
+            noecho();  // disable character echoing
+            getnstr(pass,sizeof(pass));
+            echo(); // enable character echoing again
+            // getch(); // Wait for a keypress
+            endwin(); // disable ncurses
+            // std::cout << std::endl;
             int loginverify = OfficeOfAcademics::VerifyCredentials(EmployeeID, pass);
             if(loginverify==SUCCESSFUL)
             {

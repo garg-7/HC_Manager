@@ -1,7 +1,7 @@
 #include <iostream>
 #include <cstring>
 #include <bits/stdc++.h>
-#include <conio.h>
+#include <curses.h>
 
 #include "Faculty.h"
 #include "OfficeOfAcademics.h"
@@ -18,20 +18,17 @@ void LOGINSTART();
         char ldap[40], pass[40];
         std::cout << "Enter LDAP ID: ";
         std::cin >> ldap;
-        std::cout << "Enter Password: ";
-        //std::cin >> pass;
-        int i=0;
-            char c;
-            c=getch();
-            do
-            {
-                pass[i]=c;
-                i++;
-                printf("*");
-                c=getch();
-            } while (c!='\r');
-            pass[i]='\0';
-            std::cout << std::endl;
+        
+        initscr(); // enable ncurses
+        printw("Enter Password: ");
+        noecho();  // disable character echoing
+
+        getnstr(pass,sizeof(pass));
+
+        echo(); // enable character echoing again
+        // getch(); // Wait for a keypress
+        endwin(); // disable ncurses
+        // std::cout << std::endl;
         int loginverify = OfficeOfAcademics::VerifyCredentials(ldap, pass);
 
         if (loginverify == SUCCESSFUL)

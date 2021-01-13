@@ -2,12 +2,12 @@
 CXX = g++
 
 #flags
-CXXFLAGS = -c -g
+CXXFLAGS = -c
+LDLIBS = -lncurses
+all: hc
 
-all: m1
-
-m1: main.o Patient.o Faculty.o OfficeOfAccounts.o Pharmacy.o DoctorsOffice.o OfficeOfAcademics.o
-	$(CXX) $(CFLAGS) -o m1 main.o Patient.o Faculty.o OfficeOfAccounts.o Pharmacy.o DoctorsOffice.o OfficeOfAcademics.o
+hc: main.o Patient.o Faculty.o OfficeOfAccounts.o Pharmacy.o DoctorsOffice.o OfficeOfAcademics.o
+	$(CXX) $(CFLAGS) -o hc.out main.o Patient.o Faculty.o OfficeOfAccounts.o Pharmacy.o DoctorsOffice.o OfficeOfAcademics.o $(LDLIBS)
 
 main.o: Patient.h Faculty.h OfficeOfAccounts.h Pharmacy.h DoctorsOffice.h OfficeOfAcademics.h
 
