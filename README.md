@@ -17,15 +17,32 @@ For more 'object-oriented' details head over [here](Object-Oriented_Stuff/).
   
   
 ## Requirements
-The project is built using vanilla C++. No external dependencies. You could simply run the executable according to your platform.
+There is just the additional requirement of `curses` library to stop echoing the entered password on the terminal.
   
 ### Windows
-Simply run the `hc_win.exe` file.
+MinGW was used at the time of development. To add `ncurses.h` library, simply type the following on powershell/command prompt:
+```bash
+mingw-get
+```
+The MinGW installation window would open, in which you need to select libncurses (both dev and dll) and install them.
+After that run the following command to compile the program:
+```bash
+g++ *.cpp -lncurses
+```
+Finally, double click on the executable created (by the name of `a.exe`)
   
 ### Ubuntu
-(Since it has only been tested on Ubuntu 18.04.4, being completely conservative we've mentioned Ubuntu as the title here but there is no reason you couldn't run this on any Linux distro).
-  
-Run the following in a terminal prompt.
+To get `ncurses.h`, use the following apt-get command:
 ```bash
-bash hc_lin.out
+sudo apt-get install libncurses-dev
+```
+After that simply run make to get the `hc.out` executable:
+```bash
+make
+./hc.out
+```
+If due to some reason, you don't have `make`, run the following command to compile and then run the program:
+```bash
+g++ *.cpp -lncurses
+./a.out
 ```
