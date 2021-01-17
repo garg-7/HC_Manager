@@ -2,7 +2,11 @@
 #include <cstring>
 #include <bits/stdc++.h>
 #include <cstdio>
-#include <curses.h>
+#ifdef WIN32
+#include <ncurses/ncurses.h>
+#else
+#include <ncurses.h>
+#endif
 #include "Pharmacy.h"
 #include "OfficeOfAccounts.h"
 #include "OfficeOfAcademics.h"

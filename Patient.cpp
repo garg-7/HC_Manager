@@ -3,7 +3,11 @@
 // #include <string>
 // #include <cstring>
 #include <bits/stdc++.h>
+#ifdef WIN32
+#include <ncurses/ncurses.h>
+#else
 #include <ncurses.h>
+#endif
 #include "Patient.h"
 #include "DoctorsOffice.h"
 #include "Pharmacy.h"
